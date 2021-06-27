@@ -1,17 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const { ApolloServer, gql } = require('apollo-server-express');
+const { ApolloServer } = require('apollo-server-express');
 
 const PORT = process.env.PORT || 4000;
 
 const app = express();
-
-const typeDefs = gql`
-  type Query {
-    hello: String
-    helloWorld: String
-  }
-`;
 
 const resolvers = {
     Query: {
