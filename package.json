@@ -1,0 +1,23 @@
+{
+  "name": "unleash-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tselmen/unleash-backend.git"
+  },
+  "author": "REON",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tselmen/unleash-backend/issues"
+  },
+  "homepage": "https://github.com/tselmen/unleash-backend#readme",
+  "dependencies": {
+    "apollo-server-express": "^2.25.2",
+    "graphql": "^15.5.1"
+  }
+}
