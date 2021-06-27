@@ -3,8 +3,8 @@ module.exports.validateRegisterInput = (username, phoneNumber, password, confirm
     if (username.trim() === '') {
         errors.username = 'Username must not be empty';
     }
-    if (phoneNumber.trim() === '') {
-        errors.phoneNumber = 'Email must not be empty';
+    if (!phoneNumber) {
+        errors.phoneNumber = 'Phone number must not be empty';
     }
     if (password === '') {
         errors.password = 'Password must not empty';

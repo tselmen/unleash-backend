@@ -1,6 +1,7 @@
 const { gql } = require('apollo-server-express');
 
 module.exports = gql`
+    scalar Date
     type Query {
         hello: String
         helloWorld: String
@@ -10,7 +11,7 @@ module.exports = gql`
         phoneNumber: Int!
         token: String!
         username: String!
-        createdAt: String!
+        createdAt: Date
     }
     input RegisterInput {
         username: String!

@@ -1,3 +1,5 @@
+const usersResolvers = require('./users');
+
 module.exports = {
     Query: {
         hello: () => 'Hello world!',
