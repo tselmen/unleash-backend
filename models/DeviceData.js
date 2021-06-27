@@ -1,13 +1,26 @@
 const { model, Schema } = require('mongoose');
 
 const userSchema = new Schema({
-    temperature: String,
-    co: String,
-    humdity: String,
-    timeStamp: String,
+    temperature: {
+        type: Number,
+        required: true,
+    },
+    co: {
+        type: Number,
+        required: true,
+    },
+    humdity: {
+        type: Number,
+        required: true,
+    },
+    timeStamp: {
+        type: Date,
+        required: true,
+    },
     device: {
         type: Schema.Types.ObjectId,
-        ref: 'devices',
+        ref: 'device',
+        required: true,
     },
 });
 

@@ -3,4 +3,7 @@ module.exports = {
         hello: () => 'Hello world!',
         helloWorld: () => 'Hello World!',
     },
+    Mutation: {
+        ...usersResolvers.Mutation,
+    },
 };
