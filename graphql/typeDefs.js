@@ -2,16 +2,19 @@ const { gql } = require('apollo-server-express');
 
 module.exports = gql`
     scalar Date
-    type Query {
-        hello: String
-        helloWorld: String
-    }
+
     type User {
         id: ID!
         phoneNumber: Int!
         token: String!
         username: String!
         createdAt: Date
+        devices: [ID]
+    }
+    type Device {
+        id: ID!
+        manufacturedAt: Date!
+        purchasedAt: Date
     }
     input RegisterInput {
         username: String!
@@ -19,8 +22,12 @@ module.exports = gql`
         confirmPassword: String!
         phoneNumber: Int!
     }
+    type Query {
+        getAllDevices: [Device]!
+    }
     type Mutation {
-        register(registerInput: RegisterInput): User!
+        register(registerInput: RegisterInput!): User!
         login(username: String!, password: String!): User!
+        createDevice(userId: ID!): Device!
     }
 `;
