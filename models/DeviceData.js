@@ -1,6 +1,6 @@
 const { model, Schema } = require('mongoose');
 
-const userSchema = new Schema({
+const deviceDataSchema = new Schema({
     temperature: {
         type: Number,
         required: true,
@@ -24,4 +24,4 @@ const userSchema = new Schema({
     },
 });
 
-module.exports = model('DeviceData', userSchema);
+module.exports = model('DeviceData', deviceDataSchema);

@@ -8,4 +8,4 @@ const deviceSchema = new Schema({
     },
 });
 
-module.exports = model('Device', userSchema);
+module.exports = model('Device', deviceSchema);
