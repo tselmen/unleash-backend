@@ -1,16 +1,20 @@
 const { model, Schema } = require('mongoose');
 
 const deviceDataSchema = new Schema({
-    temperature: {
+    tmp: {
         type: Number,
         required: true,
     },
-    co: {
+    ppm: {
         type: Number,
         required: true,
     },
-    humdity: {
+    hum: {
         type: Number,
+        required: true,
+    },
+    wio: {
+        type: Boolean,
         required: true,
     },
     timeStamp: {

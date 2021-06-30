@@ -1,5 +1,6 @@
 const usersResolvers = require('./users');
 const deviceResolvers = require('./devices');
+const deviceDataResolvers = require('./deviceDatas');
 
 module.exports = {
     Query: {
@@ -8,5 +9,6 @@ module.exports = {
     Mutation: {
         ...usersResolvers.Mutation,
         ...deviceResolvers.Mutation,
+        ...deviceDataResolvers.Mutation,
     },
 };
