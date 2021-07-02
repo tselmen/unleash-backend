@@ -6,6 +6,13 @@ module.exports = {
         async getAllDevices() {
             return await Device.find({});
         },
+        async getMyDevice(_, { userId }) {
+            const devices = await User.findById(userId).select('devices');
+            const deviceInfos = devices.devices.map((id) => {
+                return Device.findById(id);
+            });
+            return deviceInfos;
+        },
     },
     Mutation: {
         async createDevice(_, { userId }) {

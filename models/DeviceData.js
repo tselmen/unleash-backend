@@ -14,7 +14,7 @@ const deviceDataSchema = new Schema({
         required: true,
     },
     wio: {
-        type: Boolean,
+        type: Number,
         required: true,
     },
     timeStamp: {
@@ -24,7 +24,6 @@ const deviceDataSchema = new Schema({
     device: {
         type: Schema.Types.ObjectId,
         ref: 'device',
-        required: true,
     },
 });
 

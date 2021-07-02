@@ -43,6 +43,9 @@ module.exports = gql`
 
     type Query {
         getAllDevices: [Device]!
+        sensors: [Sensors!]!
+        getMyDevice(userId: ID!): [Device]!
+        getDeviceData: [DeviceData]!
     }
 
     type Mutation {
@@ -50,5 +53,24 @@ module.exports = gql`
         login(username: String!, password: String!): User!
         createDevice(userId: ID!): Device!
         createDeviceData(deviceDataInput: DeviceDataInput!): DeviceData!
+    }
+
+    type SensorData {
+        tmp: Float!
+        hum: Float!
+        ppm: Float!
+        wio: Boolean!
+        timeStamp: String!
+    }
+    type Subscription {
+        subscribe2sensor(topic: String!): SensorData!
+    }
+    type Sensors {
+        id: String!
+    }
+    schema {
+        query: Query
+        subscription: Subscription
+        mutation: Mutation
     }
 `;
